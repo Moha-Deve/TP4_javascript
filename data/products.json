@@ -1,0 +1,58 @@
+[
+  {
+    "id": 10,
+    "name": "Laptop",
+    "category": "Informatique",
+    "price": 8500,
+    "stock": 8
+  },
+  {
+    "id": 11,
+    "name": "Souris sans fil",
+    "category": "Accessoires",
+    "price": 180,
+    "stock": 25
+  },
+  {
+    "id": 12,
+    "name": "Clavier mécanique",
+    "category": "Accessoires",
+    "price": 450,
+    "stock": 12
+  },
+  {
+    "id": 13,
+    "name": "Écran 27 pouces",
+    "category": "Informatique",
+    "price": 2200,
+    "stock": 5
+  },
+  {
+    "id": 14,
+    "name": "Chaise ergonomique",
+    "category": "Bureautique",
+    "price": 1500,
+    "stock": 4
+  },
+  {
+    "id": 15,
+    "name": "Casque audio",
+    "category": "Accessoires",
+    "price": 600,
+    "stock": 15
+  },
+  {
+    "id": 16,
+    "name": "Imprimante laser",
+    "category": "Informatique",
+    "price": 1900,
+    "stock": 7
+  },
+  {
+    "id": 17,
+    "name": "Bureau réglable",
+    "category": "Bureautique",
+    "price": 3100,
+    "stock": 3
+  }
+]
