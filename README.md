@@ -11,12 +11,12 @@ Le projet est organisé de la manière suivante :
 - `data/` : Contient les diiferents pages sources de données (`customers.json`, `orders.json`, `products.json`).
 
 ## Fonctionnalités principales
-- Chargement asynchrone des données via l'API `Fetch`.
-- Calcul dynamique des montants par ligne et du montant total des commandes.
-- Affichage dynamique des clients, produits et commandes.
+- Chargement asynchrone des données `Fetch`.
+- Le calcul des montants par ligne et du montant total des commandes.
+- Affichage des clients, produits et commandes.
 - Interface responsive grâce au framework Bootstrap 5.
 
 ## Instructions pour lancer le projet
-1. Cloner le dépôt ou télécharger les sources.
-2. Ouvrir le dossier dans **Visual Studio Code**.
-3. Lancer le projet à l'aide d'un serveur local (comme l'extension **Live Server** de VS Code) en ouvrant le fichier `index.html`.
+1. télécharger les sources.
+2. Ouvrir le dossier dans "Visual Studio Code"
+3. Lancer le projet avec "Live Server" de VS Code en ouvrant le fichier `index.html`.
