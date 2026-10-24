@@ -21,15 +21,47 @@ export async function loadAllData() {
         const products = await resProducts.json();
         const orders = await resOrders.json();
 
-        // 4. On retourne toutes ces données regroupées
+        // ==========================================
+        // 4. CALCULS (Règles 7.3 et 7.4)
+        // ==========================================
+        const enrichedOrders = orders.map(order => {
+            let totalOrder = 0;
+
+            // 7.3 : Calcul du montant de chaque ligne
+            const enrichedItems = order.items.map(item => {
+                // On cherche le produit correspondant pour récupérer son prix
+                const product = products.find(p => p.id === item.productId);
+                const unitPrice = product ? product.price : 0;
+                
+                // Formule : montant ligne = prix du produit x quantité
+                const lineAmount = unitPrice * item.quantity;
+                
+                // On cumule pour le total de la commande
+                totalOrder += lineAmount;
+
+                return {
+                    ...item,
+                    unitPrice: unitPrice,
+                    lineAmount: lineAmount // Montant de la ligne calculé
+                };
+            });
+
+            return {
+                ...order,
+                items: enrichedItems,
+                totalAmount: totalOrder // 7.4 : Montant total de la commande calculé
+            };
+        });
+
+        // 5. On retourne toutes ces données regroupées (avec les commandes calculées)
         return {
             customers,
             products,
-            orders
+            orders: enrichedOrders
         };
 
     } catch (error) {
-        // 5. En cas d'erreur (chemin erroné, fichier manquant...), on l'affiche et on la transmet
+        // 6. En cas d'erreur (chemin erroné, fichier manquant...), on l'affiche et on la transmet
         console.error("Erreur dans dataService.js :", error);
         throw error; 
     }
